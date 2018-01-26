@@ -10,7 +10,9 @@ import pandas as pd
 
 
 accountID = '101-011-7588716-002'
-access_token = '5514b7cdb3e93d9506ecc8a87fa51254-9264c6dddb5f557577541c058ee28d55'
+access_token = (open('api_keys.txt'))
+access_token = access_token.read()
+print("This is the access token" + str(access_token))
 client = oandapyV20.API(access_token=access_token)
 
 
@@ -60,7 +62,7 @@ class buy_sell:
 			
 
 # buy_sell.mkt_position('AUD_USD', '-1')
-# print(accsum.account_value())
+print(accsum.account_value())
 # print(accsum.prof_loss())
 # print(accsum.open_positions('long'))
 
