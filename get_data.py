@@ -24,8 +24,8 @@ class collect_data: # aquire historic data from Oanda api
 
 class indicators: # Calculate Relevant Indicator Values 		
 	
-	def Moving_Average(data):
-		MA = data['Close'].rolling(center=False, window=20).mean()
+	def Moving_Average(data, window):
+		MA = data['Close'].rolling(center=False, window=window).mean()
 		MA_20d = pd.DataFrame({'MA_20d': MA})
 		# print(MA_20d)
 		return MA_20d
